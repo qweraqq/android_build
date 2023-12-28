@@ -378,7 +378,9 @@ ifneq (,$(user_variant))
 
   ifeq ($(user_variant),userdebug)
     # Pick up some extra useful tools
-    tags_to_install += debug
+    # tags_to_install += debug
+    ADDITIONAL_SYSTEM_PROPERTIES += ro.adb.secure=1
+    enable_target_debugging :=
   else
     # Disable debugging in plain user builds.
     enable_target_debugging :=

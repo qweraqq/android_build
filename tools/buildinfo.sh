@@ -26,10 +26,10 @@ echo "ro.build.version.min_supported_target_sdk=$PLATFORM_MIN_SUPPORTED_TARGET_S
 echo "ro.build.date=`$DATE`"
 echo "ro.build.date.utc=`$DATE +%s`"
 echo "ro.build.type=$TARGET_BUILD_TYPE"
-echo "ro.build.user=$BUILD_USERNAME"
-echo "ro.build.host=$BUILD_HOSTNAME"
+echo "ro.build.user=hudsoncm"
+echo "ro.build.host=ilclbld184"
 echo "ro.build.tags=$BUILD_VERSION_TAGS"
-echo "ro.build.flavor=$TARGET_BUILD_FLAVOR"
+echo "ro.build.flavor=nio_retcn-user"
 if [ -n "$BOARD_BUILD_SYSTEM_ROOT_IMAGE" ] ; then
   echo "ro.build.system_root_image=$BOARD_BUILD_SYSTEM_ROOT_IMAGE"
 fi
