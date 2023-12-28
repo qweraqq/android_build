@@ -62,8 +62,8 @@ define generate-common-build-props
             echo "ro.$(1).product.cpu.abilist64=$(TARGET_CPU_ABI_LIST_64_BIT)" >> $(2);\
         )\
     )\
-    echo "ro.$(1).build.date=`$(DATE_FROM_FILE)`" >> $(2);\
-    echo "ro.$(1).build.date.utc=`$(DATE_FROM_FILE) +%s`" >> $(2);\
+    echo "ro.$(1).build.date=Tue Sep 19 03:21:09 CDT 2023" >> $(2);\
+    echo "ro.$(1).build.date.utc=1695111669" >> $(2);\
     echo "ro.$(1).build.fingerprint=$(BUILD_FINGERPRINT_FROM_FILE)" >> $(2);\
     echo "ro.$(1).build.id=$(BUILD_ID)" >> $(2);\
     echo "ro.$(1).build.tags=release-keys" >> $(2);\
