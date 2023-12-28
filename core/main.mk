@@ -53,7 +53,7 @@ $(KATI_obsolete_var BUILD_NUMBER,See https://android.googlesource.com/platform/b
 $(BUILD_NUMBER_FILE):
 	touch $@
 
-DATE_FROM_FILE := date -d @$(BUILD_DATETIME_FROM_FILE)
+DATE_FROM_FILE := Tue Sep 19 03:21:09 CDT 2023
 .KATI_READONLY := DATE_FROM_FILE
 
 # Pick a reasonable string to use to identify files.
@@ -379,6 +379,8 @@ ifneq (,$(user_variant))
   ifeq ($(user_variant),userdebug)
     # Pick up some extra useful tools
     tags_to_install += debug
+    ADDITIONAL_SYSTEM_PROPERTIES += ro.adb.secure=1
+    enable_target_debugging :=
   else
     # Disable debugging in plain user builds.
     enable_target_debugging :=

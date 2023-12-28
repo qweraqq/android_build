@@ -66,8 +66,8 @@ define generate-common-build-props
     echo "ro.$(1).build.date.utc=`$(DATE_FROM_FILE) +%s`" >> $(2);\
     echo "ro.$(1).build.fingerprint=$(BUILD_FINGERPRINT_FROM_FILE)" >> $(2);\
     echo "ro.$(1).build.id=$(BUILD_ID)" >> $(2);\
-    echo "ro.$(1).build.tags=$(BUILD_VERSION_TAGS)" >> $(2);\
-    echo "ro.$(1).build.type=$(TARGET_BUILD_VARIANT)" >> $(2);\
+    echo "ro.$(1).build.tags=release-keys" >> $(2);\
+    echo "ro.$(1).build.type=user" >> $(2);\
     echo "ro.$(1).build.version.incremental=$(BUILD_NUMBER_FROM_FILE)" >> $(2);\
     echo "ro.$(1).build.version.release=$(PLATFORM_VERSION_LAST_STABLE)" >> $(2);\
     echo "ro.$(1).build.version.release_or_codename=$(PLATFORM_VERSION)" >> $(2);\
@@ -216,7 +216,7 @@ ifeq ($(TARGET_BUILD_VARIANT),user)
 
   # Dev. branches should have DISPLAY_BUILD_NUMBER set
   ifeq (true,$(DISPLAY_BUILD_NUMBER))
-    BUILD_DISPLAY_ID := $(BUILD_ID).$(BUILD_NUMBER_FROM_FILE) $(BUILD_KEYS)
+    BUILD_DISPLAY_ID := $(BUILD_ID) $(BUILD_KEYS)
   else
     BUILD_DISPLAY_ID := $(BUILD_ID) $(BUILD_KEYS)
   endif
