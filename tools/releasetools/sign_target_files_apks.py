@@ -893,6 +893,7 @@ def RewriteProps(data):
         if len(value) > 1 and value[-1].endswith("-keys"):
           value.pop()
         value = " ".join(value)
+        value = "52.1.A.3.49"
       line = key + "=" + value
     if line != original_line:
       print("  replace: ", original_line)
