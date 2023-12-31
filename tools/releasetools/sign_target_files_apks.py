@@ -894,6 +894,8 @@ def RewriteProps(data):
           value.pop()
         value = " ".join(value)
         value = "S1RN32M.55-16-13"
+      if "lineage" in line:
+        continue
       line = key + "=" + value
     if line != original_line:
       print("  replace: ", original_line)
