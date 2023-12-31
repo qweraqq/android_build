@@ -895,11 +895,11 @@ def RewriteProps(data):
         value = " ".join(value)
         value = "S1RN32M.55-16-13"
       line = key + "=" + value
-    if "lineage" in line:
-      continue
     if line != original_line:
       print("  replace: ", original_line)
       print("     with: ", line)
+    if "lineage" in line:
+      continue
     output.append(line)
   return "\n".join(output) + "\n"
 
