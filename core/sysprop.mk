@@ -37,17 +37,17 @@ define generate-common-build-props
     echo "# These properties identify this partition image." >> $(2);\
     echo "####################################" >> $(2);\
     $(if $(filter system,$(1)),\
-        echo "ro.product.$(1).brand=$(PRODUCT_SYSTEM_BRAND)" >> $(2);\
-        echo "ro.product.$(1).device=$(PRODUCT_SYSTEM_DEVICE)" >> $(2);\
-        echo "ro.product.$(1).manufacturer=$(PRODUCT_SYSTEM_MANUFACTURER)" >> $(2);\
-        echo "ro.product.$(1).model=$(PRODUCT_SYSTEM_MODEL)" >> $(2);\
-        echo "ro.product.$(1).name=$(PRODUCT_SYSTEM_NAME)" >> $(2);\
+        echo "ro.product.$(1).brand=Xiaomi" >> $(2);\
+        echo "ro.product.$(1).device=sirius" >> $(2);\
+        echo "ro.product.$(1).manufacturer=Xiaomi" >> $(2);\
+        echo "ro.product.$(1).model=MI 8 SE" >> $(2);\
+        echo "ro.product.$(1).name=sirius" >> $(2);\
       ,\
         echo "ro.product.$(1).brand=$(PRODUCT_BRAND)" >> $(2);\
-        echo "ro.product.$(1).device=$${TARGET_DEVICE:-$(TARGET_DEVICE)}" >> $(2);\
+        echo "ro.product.$(1).device=sirius" >> $(2);\
         echo "ro.product.$(1).manufacturer=$(PRODUCT_MANUFACTURER)" >> $(2);\
-        echo "ro.product.$(1).model=$${PRODUCT_MODEL:-$(PRODUCT_MODEL)}" >> $(2);\
-        echo "ro.product.$(1).name=$${TARGET_PRODUCT:-$(TARGET_PRODUCT)}" >> $(2);\
+        echo "ro.product.$(1).model=MI 8 SE" >> $(2);\
+        echo "ro.product.$(1).name=sirius" >> $(2);\
     )\
     $(if $(filter true,$(ZYGOTE_FORCE_64)),\
         $(if $(filter vendor,$(1)),\
@@ -62,13 +62,13 @@ define generate-common-build-props
             echo "ro.$(1).product.cpu.abilist64=$(TARGET_CPU_ABI_LIST_64_BIT)" >> $(2);\
         )\
     )\
-    echo "ro.$(1).build.date=`$(DATE_FROM_FILE)`" >> $(2);\
-    echo "ro.$(1).build.date.utc=`$(DATE_FROM_FILE) +%s`" >> $(2);\
-    echo "ro.$(1).build.fingerprint=$(BUILD_FINGERPRINT_FROM_FILE)" >> $(2);\
-    echo "ro.$(1).build.id=$(BUILD_ID)" >> $(2);\
-    echo "ro.$(1).build.tags=$(BUILD_VERSION_TAGS)" >> $(2);\
-    echo "ro.$(1).build.type=$(TARGET_BUILD_VARIANT)" >> $(2);\
-    echo "ro.$(1).build.version.incremental=$(BUILD_NUMBER_FROM_FILE)" >> $(2);\
+    echo "ro.$(1).build.date=Fri Jun 25 16:13:31 CST 2021" >> $(2);\
+    echo "ro.$(1).build.date.utc=1624608811" >> $(2);\
+    echo "ro.$(1).build.fingerprint=Xiaomi/sirius/sirius:10/QKQ1.190828.002/V12.5.1.0.QEBCNXM:user/release-keys" >> $(2);\
+    echo "ro.$(1).build.id=QKQ1.190828.002" >> $(2);\
+    echo "ro.$(1).build.tags=user" >> $(2);\
+    echo "ro.$(1).build.type=release-keys" >> $(2);\
+    echo "ro.$(1).build.version.incremental=V12.5.1.0.QEBCNXM" >> $(2);\
     echo "ro.$(1).build.version.release=$(PLATFORM_VERSION_LAST_STABLE)" >> $(2);\
     echo "ro.$(1).build.version.release_or_codename=$(PLATFORM_VERSION)" >> $(2);\
     echo "ro.$(1).build.version.sdk=$(PLATFORM_SDK_VERSION)" >> $(2);\
