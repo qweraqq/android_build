@@ -66,7 +66,7 @@ define generate-common-build-props
     echo "ro.$(1).build.date.utc=1624608811" >> $(2);\
     echo "ro.$(1).build.fingerprint=Xiaomi/sirius/sirius:10/QKQ1.190828.002/V12.5.1.0.QEBCNXM:user/release-keys" >> $(2);\
     echo "ro.$(1).build.id=QKQ1.190828.002" >> $(2);\
-    echo "ro.$(1).build.tags=release-key" >> $(2);\
+    echo "ro.$(1).build.tags=release-keys" >> $(2);\
     echo "ro.$(1).build.type=user" >> $(2);\
     echo "ro.$(1).build.version.incremental=V12.5.1.0.QEBCNXM" >> $(2);\
     echo "ro.$(1).build.version.release=$(PLATFORM_VERSION_LAST_STABLE)" >> $(2);\
