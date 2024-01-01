@@ -37,17 +37,17 @@ define generate-common-build-props
     echo "# These properties identify this partition image." >> $(2);\
     echo "####################################" >> $(2);\
     $(if $(filter system,$(1)),\
-        echo "ro.product.$(1).brand=$(PRODUCT_SYSTEM_BRAND)" >> $(2);\
-        echo "ro.product.$(1).device=$(PRODUCT_SYSTEM_DEVICE)" >> $(2);\
-        echo "ro.product.$(1).manufacturer=$(PRODUCT_SYSTEM_MANUFACTURER)" >> $(2);\
-        echo "ro.product.$(1).model=$(PRODUCT_SYSTEM_MODEL)" >> $(2);\
-        echo "ro.product.$(1).name=$(PRODUCT_SYSTEM_NAME)" >> $(2);\
+        echo "ro.product.$(1).brand=Sony" >> $(2);\
+        echo "ro.product.$(1).device=H8166" >> $(2);\
+        echo "ro.product.$(1).manufacturer=Sony" >> $(2);\
+        echo "ro.product.$(1).model=H8166" >> $(2);\
+        echo "ro.product.$(1).name=Xperia XZ2 Premium" >> $(2);\
       ,\
-        echo "ro.product.$(1).brand=$(PRODUCT_BRAND)" >> $(2);\
-        echo "ro.product.$(1).device=$${TARGET_DEVICE:-$(TARGET_DEVICE)}" >> $(2);\
-        echo "ro.product.$(1).manufacturer=$(PRODUCT_MANUFACTURER)" >> $(2);\
-        echo "ro.product.$(1).model=$${PRODUCT_MODEL:-$(PRODUCT_MODEL)}" >> $(2);\
-        echo "ro.product.$(1).name=$${TARGET_PRODUCT:-$(TARGET_PRODUCT)}" >> $(2);\
+        echo "ro.product.$(1).brand=Sony" >> $(2);\
+        echo "ro.product.$(1).device=H8166" >> $(2);\
+        echo "ro.product.$(1).manufacturer=Sony" >> $(2);\
+        echo "ro.product.$(1).model=H8166" >> $(2);\
+        echo "ro.product.$(1).name=Xperia XZ2 Premium" >> $(2);\
     )\
     $(if $(filter true,$(ZYGOTE_FORCE_64)),\
         $(if $(filter vendor,$(1)),\
@@ -62,13 +62,13 @@ define generate-common-build-props
             echo "ro.$(1).product.cpu.abilist64=$(TARGET_CPU_ABI_LIST_64_BIT)" >> $(2);\
         )\
     )\
-    echo "ro.$(1).build.date=`$(DATE_FROM_FILE)`" >> $(2);\
-    echo "ro.$(1).build.date.utc=`$(DATE_FROM_FILE) +%s`" >> $(2);\
-    echo "ro.$(1).build.fingerprint=$(BUILD_FINGERPRINT_FROM_FILE)" >> $(2);\
-    echo "ro.$(1).build.id=$(BUILD_ID)" >> $(2);\
-    echo "ro.$(1).build.tags=$(BUILD_VERSION_TAGS)" >> $(2);\
+    echo "ro.$(1).build.date=Fri Feb 19 02:20:51 JST 2021" >> $(2);\
+    echo "ro.$(1).build.date.utc=1613668851" >> $(2);\
+    echo "ro.$(1).build.fingerprint=Sony/H8166/H8166:10/52.1.A.3.137/052001A003013702006556692:user/release-keys" >> $(2);\
+    echo "ro.$(1).build.id=52.1.A.3.137" >> $(2);\
+    echo "ro.$(1).build.tags=release-keys" >> $(2);\
     echo "ro.$(1).build.type=user" >> $(2);\
-    echo "ro.$(1).build.version.incremental=$(BUILD_NUMBER_FROM_FILE)" >> $(2);\
+    echo "ro.$(1).build.version.incremental=052001A003013702006556692" >> $(2);\
     echo "ro.$(1).build.version.release=$(PLATFORM_VERSION_LAST_STABLE)" >> $(2);\
     echo "ro.$(1).build.version.release_or_codename=$(PLATFORM_VERSION)" >> $(2);\
     echo "ro.$(1).build.version.sdk=$(PLATFORM_SDK_VERSION)" >> $(2);\
