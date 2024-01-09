@@ -1367,10 +1367,10 @@ def BuildVendorPartitions(output_zip_path):
       boot_img = "IMAGES/boot.img"
       common.ZipWrite(output_zip, os.path.join(vendor_tempdir, recovery_img), recovery_img)
       common.ZipWrite(output_zip, os.path.join(vendor_tempdir, boot_img), boot_img)
-      recovery_patch_path = "VENDOR/recovery-from-boot.p"
-      recovery_sh_path = "VENDOR/bin/install-recovery.sh"
-      common.ZipWrite(output_zip, os.path.join(vendor_tempdir, recovery_patch_path), recovery_patch_path)
-      common.ZipWrite(output_zip, os.path.join(vendor_tempdir, recovery_sh_path), recovery_sh_path)
+      # recovery_patch_path = "VENDOR/recovery-from-boot.p"
+      # recovery_sh_path = "VENDOR/bin/install-recovery.sh"
+      # common.ZipWrite(output_zip, os.path.join(vendor_tempdir, recovery_patch_path), recovery_patch_path)
+      # common.ZipWrite(output_zip, os.path.join(vendor_tempdir, recovery_sh_path), recovery_sh_path)
 
 
 def main(argv):
