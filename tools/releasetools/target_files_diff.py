@@ -110,7 +110,7 @@ REWRITE_RULES = {
     'SYSTEM/build.prop': rewrite_build_property,
     'VENDOR/build.prop': rewrite_build_property,
 
-    'SYSTEM/bin/install-recovery.sh': trim_install_recovery,
+    # 'SYSTEM/bin/install-recovery.sh': trim_install_recovery,
 
     'META/boot_filesystem_config.txt': sort_file,
     'META/filesystem_config.txt': sort_file,

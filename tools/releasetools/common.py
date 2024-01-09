@@ -3681,7 +3681,7 @@ fi
 
   # The install script location moved from /system/etc to /system/bin in the L
   # release. In the R release it is in VENDOR/bin or SYSTEM/vendor/bin.
-  output_sink("bin/install-recovery.sh", sh.encode())
+  # output_sink("bin/install-recovery.sh", sh.encode())
 
 
 class DynamicPartitionUpdate(object):
