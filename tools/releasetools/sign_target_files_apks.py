@@ -893,7 +893,7 @@ def RewriteProps(data):
         if len(value) > 1 and value[-1].endswith("-keys"):
           value.pop()
         value = " ".join(value)
-        value = "S1RN32M.55-16-13"
+        value = "S1RN32.55-16-13"
       line = key + "=" + value
     if line != original_line:
       print("  replace: ", original_line)
