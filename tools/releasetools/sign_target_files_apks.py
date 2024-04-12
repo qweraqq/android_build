@@ -893,10 +893,13 @@ def RewriteProps(data):
         if len(value) > 1 and value[-1].endswith("-keys"):
           value.pop()
         value = " ".join(value)
+        value = "T1RMS33M.1-110-17-6"
       line = key + "=" + value
     if line != original_line:
       print("  replace: ", original_line)
       print("     with: ", line)
+    if "lineage" in line:
+      continue
     output.append(line)
   return "\n".join(output) + "\n"
 

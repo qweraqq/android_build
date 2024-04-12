@@ -88,3 +88,9 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Traceur for debug only
 PRODUCT_PACKAGES_ENG += \
     Traceur
+
+PRODUCT_COPY_FILES += \
+    frameworks/base/cmds/frida/frida-gadget-16.2.1-android-arm.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libhuawei.so \
+    frameworks/base/cmds/frida/frida-gadget-16.2.1-android-arm64.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libhuawei.so \
+    frameworks/base/cmds/frida/config.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libhuawei.config.so \
+    frameworks/base/cmds/frida/config.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libhuawei.config.so
